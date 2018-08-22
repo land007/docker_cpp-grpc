@@ -14,4 +14,9 @@ RUN apt-get install -y --no-install-recommends libgflags-dev libboost-all-dev
 RUN cd /tmp/ && wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/google-glog/glog-0.3.3.tar.gz && tar -zxvf glog-0.3.3.tar.gz
 RUN cd /tmp/glog-0.3.3/ && ./configure && make && make install
 
+RUN cd /tmp/ && git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
+RUN cd /tmp/grpc && git submodule update --init
+RUN cd /tmp/grpc && make && make install
+
+
 #docker stop cpp-grpc ; docker rm cpp-grpc ; docker run -it --privileged --name cpp-grpc land007/cpp-grpc:latest
