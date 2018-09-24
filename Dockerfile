@@ -1,4 +1,4 @@
-FROM land007/ubuntu-build:latest
+FROM land007/ubuntu-build:16.04
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
