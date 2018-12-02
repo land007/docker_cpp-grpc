@@ -1,4 +1,4 @@
-FROM land007/ubuntu-build:latest
+FROM land007/ubuntu-codemeter:latest
 
 MAINTAINER Yiqiu Jia <yiqiujia@hotmail.com>
 
