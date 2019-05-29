@@ -11,7 +11,9 @@ RUN cd /tmp/ && git clone -b $(curl -L https://grpc.io/release) https://github.c
 RUN cd /tmp/grpc && git submodule update --init
 RUN cd /tmp/grpc && make && make install && rm -rf /tmp/grpc
 
+RUN echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_times
 RUN echo $(date "+%Y-%m-%d_%H:%M:%S") > /.image_time
+RUN echo "land007/cpp-grpc" >> /.image_names
 RUN echo "land007/cpp-grpc" > /.image_name
 
 #docker stop cpp-grpc ; docker rm cpp-grpc ; docker run -it --privileged --name cpp-grpc land007/cpp-grpc:latest
